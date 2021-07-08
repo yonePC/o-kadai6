@@ -31,7 +31,9 @@
         </tr>
       </table>
       <!--コメント-->
-      <%= render 'books/comment', book: @book,book_comment: @book_comment%>
+      <div id="comments_area">
+        <%= render partial: 'books/comment', locals: {book: @book,book_comment: @book_comment} %>
+      </div>
     </div>
   </div>
 </div>
