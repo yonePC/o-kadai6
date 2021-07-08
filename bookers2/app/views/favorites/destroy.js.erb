@@ -1,0 +1,3 @@
+
+<!--document.getElementById('book_%= @book.id %>').innerHTML = '%= escape_javascript(render @book) %>'-->
+$("#favorite-<%= @book.id %>").html("<%= j(render partial: 'favorites/favorite-btn', locals: { book: @book }) %>");
