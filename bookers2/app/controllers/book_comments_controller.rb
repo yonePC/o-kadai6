@@ -7,10 +7,11 @@ class BookCommentsController < ApplicationController
 		@book_comment.book_id = @book.id
 		@book_comment.user_id = current_user.id
 		if @book_comment.save
+			render "show"
   		# redirect_to book_path(@book.id)
-  		render 'books/show'
-		else
-		  render 'books/show'
+  		# render 'books/show'
+		# else
+		#   render 'books/show'
 		end
 	end
 
@@ -19,7 +20,8 @@ class BookCommentsController < ApplicationController
   		@book_comment = @book.book_comments.find(params[:id])
 		if @book_comment.destroy
 		# redirect_to request.referer
-		  render 'books/show'
+		  #render 'books/show'
+		  render "show"
 		end
 	end
 
